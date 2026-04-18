@@ -116,6 +116,14 @@ export function ProjectDetailsPage() {
   }
 
   const project = projectQuery.data
+  if (!project) {
+    return (
+      <SectionCard title="Project details">
+        <ErrorState message="Project not found." />
+      </SectionCard>
+    )
+  }
+
   const members = membersQuery.data ?? []
   const tasks = tasksQuery.data ?? []
   const activity = activityQuery.data ?? []

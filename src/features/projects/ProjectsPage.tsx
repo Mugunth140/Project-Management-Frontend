@@ -63,8 +63,9 @@ export function ProjectsPage() {
       {projectsQuery.isSuccess && projectsQuery.data.length > 0 && (
         <div className="space-y-3">
           {projectsQuery.data.map((project) => {
-            const canDeleteOrEdit =
-              Boolean(user) && (user.role === 'ADMIN' || user.id === project.owner.id)
+            const canDeleteOrEdit = user
+              ? user.role === 'ADMIN' || user.id === project.owner.id
+              : false
 
             return (
               <article

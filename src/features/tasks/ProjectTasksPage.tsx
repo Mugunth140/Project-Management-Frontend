@@ -84,7 +84,9 @@ export function ProjectTasksPage() {
   const project = projectQuery.data ?? null
 
   const canManageProjectTasks = canManageProject(user, project, members)
-  const canCreateTasks = Boolean(user) && user.role !== 'VIEWER' && canManageProjectTasks
+  const canCreateTasks = user
+    ? user.role !== 'VIEWER' && canManageProjectTasks
+    : false
 
   const assignableUsers = useMemo(() => {
     if (!project) {

@@ -28,6 +28,13 @@ export function DashboardPage() {
   }
 
   const dashboard = dashboardQuery.data
+  if (!dashboard) {
+    return (
+      <SectionCard title="Dashboard">
+        <ErrorState message="Dashboard data is unavailable." />
+      </SectionCard>
+    )
+  }
 
   return (
     <div className="space-y-6">

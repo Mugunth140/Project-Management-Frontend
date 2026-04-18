@@ -110,6 +110,7 @@ export function ProjectFormPage() {
     mutationFn: (values: ProjectFormValues) =>
       projectsApi.update(editProjectId as number, {
         ...values,
+        description: values.description ?? '',
         deadline: values.deadline || null,
       }),
     onSuccess: async (project) => {
@@ -123,6 +124,7 @@ export function ProjectFormPage() {
     setSubmitError(null)
     const payload = {
       ...values,
+      description: values.description ?? '',
       deadline: values.deadline || null,
     }
 
