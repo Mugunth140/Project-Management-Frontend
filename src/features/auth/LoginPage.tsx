@@ -47,7 +47,7 @@ export function LoginPage() {
     <PageShell>
       <div className="mx-auto flex min-h-[75vh] max-w-md items-center">
         <div className="w-full rounded-2xl border border-zinc-200 bg-white p-6 shadow-2xl backdrop-blur">
-          <p className="text-xs uppercase tracking-[0.22em] text-zinc-700">Project OS</p>
+          <p className="text-xs uppercase tracking-[0.22em] text-blue-600">Project OS</p>
           <h1 className="mt-2 text-2xl font-bold text-zinc-950">Sign in</h1>
           <p className="mt-1 text-sm text-zinc-600">Access your dashboard and active projects.</p>
 

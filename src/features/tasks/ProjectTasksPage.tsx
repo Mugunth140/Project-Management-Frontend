@@ -250,7 +250,7 @@ export function ProjectTasksPage() {
       <section className="rounded-2xl border border-zinc-200 bg-white p-5">
         <div className="flex flex-wrap items-center justify-between gap-3">
           <div>
-            <p className="text-xs uppercase tracking-[0.2em] text-zinc-700">Task board</p>
+            <p className="text-xs uppercase tracking-[0.2em] text-blue-600">Task board</p>
             <h1 className="text-2xl font-bold text-zinc-950">{project?.name}</h1>
             {memberRole && <p className="text-sm text-zinc-600">Your project role: {memberRole}</p>}
           </div>

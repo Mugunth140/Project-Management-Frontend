@@ -38,8 +38,8 @@ export function DashboardPage() {
 
   return (
     <div className="space-y-6">
-      <section className="rounded-2xl border border-zinc-200 bg-linear-to-r from-zinc-500/20 via-zinc-900/50 to-zinc-500/15 p-6">
-        <p className="text-xs uppercase tracking-[0.22em] text-zinc-800">Overview</p>
+      <section className="rounded-2xl border border-blue-100 bg-linear-to-r from-blue-50 via-white to-zinc-50 p-6">
+        <p className="text-xs uppercase tracking-[0.22em] text-blue-600">Overview</p>
         <h1 className="mt-2 text-3xl font-bold text-zinc-950">Team Performance Dashboard</h1>
         <p className="mt-1 max-w-2xl text-sm text-zinc-700">
           Track your projects, see what is due today, and jump into urgent tasks quickly.

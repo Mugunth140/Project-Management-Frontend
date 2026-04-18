@@ -53,7 +53,7 @@ export function RegisterPage() {
     <PageShell>
       <div className="mx-auto flex min-h-[80vh] max-w-lg items-center">
         <div className="w-full rounded-2xl border border-zinc-200 bg-white p-6 shadow-2xl backdrop-blur">
-          <p className="text-xs uppercase tracking-[0.22em] text-zinc-700">Project OS</p>
+          <p className="text-xs uppercase tracking-[0.22em] text-blue-600">Project OS</p>
           <h1 className="mt-2 text-2xl font-bold text-zinc-950">Create account</h1>
           <p className="mt-1 text-sm text-zinc-600">Join your team workspace and start managing work.</p>
 

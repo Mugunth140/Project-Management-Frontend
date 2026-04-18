@@ -245,7 +245,7 @@ export function TaskDetailsPage() {
       <section className="rounded-2xl border border-zinc-200 bg-white p-5">
         <div className="flex flex-wrap items-start justify-between gap-3">
           <div>
-            <p className="text-xs uppercase tracking-[0.22em] text-zinc-700">Task details</p>
+            <p className="text-xs uppercase tracking-[0.22em] text-blue-600">Task details</p>
             <h1 className="text-2xl font-bold text-zinc-950">{task?.title}</h1>
             <p className="mt-1 text-sm text-zinc-600">Project: {project?.name ?? 'Unknown'}</p>
           </div>

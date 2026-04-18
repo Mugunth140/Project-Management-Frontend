@@ -4,7 +4,7 @@ import './index.css'
 import App from './App.tsx'
 import { AppProviders } from './app/providers'
 
-document.body.className = 'min-h-screen bg-zinc-950 text-zinc-900'
+document.body.className = 'min-h-screen bg-white text-zinc-900 antialiased'
 
 createRoot(document.getElementById('root')!).render(
   <StrictMode>

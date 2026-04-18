@@ -134,7 +134,7 @@ export function ProjectDetailsPage() {
       <section className="rounded-2xl border border-zinc-200 bg-white p-5">
         <div className="flex flex-wrap items-start justify-between gap-3">
           <div>
-            <p className="text-xs uppercase tracking-[0.2em] text-zinc-700">Project</p>
+            <p className="text-xs uppercase tracking-[0.2em] text-blue-600">Project</p>
             <h1 className="mt-1 text-2xl font-bold text-zinc-950">{project.name}</h1>
             <p className="mt-2 max-w-3xl text-sm text-zinc-700">{project.description || 'No description yet.'}</p>
           </div>

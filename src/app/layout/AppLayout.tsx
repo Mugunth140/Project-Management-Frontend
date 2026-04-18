@@ -16,7 +16,7 @@ export function AppLayout() {
       <div className="grid gap-6 lg:grid-cols-[260px,1fr]">
         <aside className="h-fit rounded-2xl border border-zinc-200 bg-white p-4 shadow-xl backdrop-blur">
           <Link to="/" className="mb-6 block rounded-xl border border-zinc-200 bg-zinc-50 px-3 py-2">
-            <p className="text-xs uppercase tracking-[0.2em] text-zinc-700">Project OS</p>
+            <p className="text-xs uppercase tracking-[0.2em] text-blue-600">Project OS</p>
             <p className="text-lg font-semibold text-zinc-950">Management Hub</p>
           </Link>
 
@@ -30,7 +30,7 @@ export function AppLayout() {
                   [
                     'block rounded-lg px-3 py-2 text-sm font-semibold transition',
                     isActive
-                      ? 'bg-zinc-300 text-zinc-950'
+                      ? 'bg-blue-600 text-white'
                       : 'text-zinc-700 hover:bg-zinc-100 hover:text-zinc-900',
                   ].join(' ')
                 }
@@ -49,7 +49,7 @@ export function AppLayout() {
               </div>
               <button
                 onClick={logout}
-                className="mt-4 w-full rounded-lg border border-zinc-200 px-3 py-2 text-sm font-semibold text-zinc-800 transition hover:bg-zinc-500/15"
+                className="mt-4 w-full rounded-lg border border-zinc-300 px-3 py-2 text-sm font-semibold text-zinc-700 transition hover:bg-zinc-100"
               >
                 Logout
               </button>
