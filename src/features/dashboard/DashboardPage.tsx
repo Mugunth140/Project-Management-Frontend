@@ -38,7 +38,7 @@ export function DashboardPage() {
 
   return (
     <div className="space-y-6">
-      <section className="rounded-2xl border border-cyan-400/20 bg-gradient-to-r from-cyan-500/20 via-slate-900/50 to-emerald-500/15 p-6">
+      <section className="rounded-2xl border border-cyan-400/20 bg-linear-to-r from-cyan-500/20 via-slate-900/50 to-emerald-500/15 p-6">
         <p className="text-xs uppercase tracking-[0.22em] text-cyan-200">Overview</p>
         <h1 className="mt-2 text-3xl font-bold text-white">Team Performance Dashboard</h1>
         <p className="mt-1 max-w-2xl text-sm text-slate-300">

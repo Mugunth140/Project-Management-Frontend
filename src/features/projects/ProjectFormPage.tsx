@@ -21,7 +21,11 @@ import {
   Textarea,
 } from '../../shared/ui/base'
 import { useAuth } from '../auth/auth-context'
-import type { Priority, ProjectStatus } from '../../shared/types/models'
+import type {
+  Priority,
+  ProjectCreateUpdateRequest,
+  ProjectStatus,
+} from '../../shared/types/models'
 
 const projectSchema = z.object({
   name: z.string().min(2, 'Project name is required'),
@@ -107,12 +111,17 @@ export function ProjectFormPage() {
   })
 
   const updateMutation = useMutation({
-    mutationFn: (values: ProjectFormValues) =>
-      projectsApi.update(editProjectId as number, {
-        ...values,
+    mutationFn: (values: ProjectFormValues) => {
+      const payload: ProjectCreateUpdateRequest = {
+        name: values.name,
         description: values.description ?? '',
+        status: values.status,
+        priority: values.priority,
         deadline: values.deadline || null,
-      }),
+      }
+
+      return projectsApi.update(editProjectId as number, payload)
+    },
     onSuccess: async (project) => {
       await queryClient.invalidateQueries({ queryKey: ['projects'] })
       await queryClient.invalidateQueries({ queryKey: ['project', project.id] })
@@ -122,9 +131,11 @@ export function ProjectFormPage() {
 
   const onSubmit = handleSubmit(async (values) => {
     setSubmitError(null)
-    const payload = {
-      ...values,
+    const payload: ProjectCreateUpdateRequest = {
+      name: values.name,
       description: values.description ?? '',
+      status: values.status,
+      priority: values.priority,
       deadline: values.deadline || null,
     }
 
