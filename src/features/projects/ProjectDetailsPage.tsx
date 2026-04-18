@@ -115,7 +115,7 @@ export function ProjectDetailsPage() {
     )
   }
 
-  const project = projectQuery.data
+  const project = projectQuery.data ?? null
   if (!project) {
     return (
       <SectionCard title="Project details">

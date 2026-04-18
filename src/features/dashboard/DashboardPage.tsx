@@ -4,6 +4,7 @@ import { dashboardApi } from '../../shared/api/services'
 import { formatDate, formatDateTime } from '../../shared/lib/format'
 import { parseApiError } from '../../shared/lib/errors'
 import { EmptyState, ErrorState, Pill, SectionCard, Spinner } from '../../shared/ui/base'
+import type { DashboardDto } from '../../shared/types/models'
 
 export function DashboardPage() {
   const dashboardQuery = useQuery({
@@ -27,13 +28,12 @@ export function DashboardPage() {
     )
   }
 
-  const dashboard = dashboardQuery.data
-  if (!dashboard) {
-    return (
-      <SectionCard title="Dashboard">
-        <ErrorState message="Dashboard data is unavailable." />
-      </SectionCard>
-    )
+  const dashboard: DashboardDto = dashboardQuery.data ?? {
+    totalProjects: 0,
+    tasksDueToday: 0,
+    completedTasks: 0,
+    myTasks: [],
+    recentActivities: [],
   }
 
   return (

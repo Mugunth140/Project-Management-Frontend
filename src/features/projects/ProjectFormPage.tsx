@@ -29,7 +29,7 @@ import type {
 
 const projectSchema = z.object({
   name: z.string().min(2, 'Project name is required'),
-  description: z.string().optional(),
+  description: z.string(),
   status: z.enum(PROJECT_STATUSES as [ProjectStatus, ...ProjectStatus[]]),
   priority: z.enum(PRIORITIES as [Priority, ...Priority[]]),
   deadline: z.string().optional(),

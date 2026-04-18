@@ -84,9 +84,9 @@ export function ProjectTasksPage() {
   const project = projectQuery.data ?? null
 
   const canManageProjectTasks = canManageProject(user, project, members)
-  const canCreateTasks = user
-    ? user.role !== 'VIEWER' && canManageProjectTasks
-    : false
+  const canCreateTasks = Boolean(
+    user?.role && user.role !== 'VIEWER' && canManageProjectTasks,
+  )
 
   const assignableUsers = useMemo(() => {
     if (!project) {
@@ -375,7 +375,7 @@ export function ProjectTasksPage() {
                         <Pill>{task.priority}</Pill>
                         {canManageThisTask ? (
                           <Select
-                            className="w-[155px]"
+                            className="w-40"
                             value={task.status}
                             onChange={(event) =>
                               updateStatusMutation.mutate({
