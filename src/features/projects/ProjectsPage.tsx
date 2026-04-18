@@ -69,17 +69,17 @@ export function ProjectsPage() {
             return (
               <article
                 key={project.id}
-                className="rounded-xl border border-zinc-700 bg-zinc-950/40 p-4"
+                className="rounded-xl border border-zinc-200 bg-white p-4"
               >
                 <div className="flex flex-wrap items-start justify-between gap-3">
                   <div>
                     <Link
                       to={`/projects/${project.id}`}
-                      className="text-lg font-semibold text-zinc-200 hover:text-zinc-100"
+                      className="text-lg font-semibold text-blue-600 hover:text-blue-700"
                     >
                       {project.name}
                     </Link>
-                    <p className="mt-1 max-w-2xl text-sm text-zinc-400">{project.description || 'No description'}</p>
+                    <p className="mt-1 max-w-2xl text-sm text-zinc-600">{project.description || 'No description'}</p>
                   </div>
                   <div className="flex flex-wrap items-center gap-2">
                     <Pill>{project.status}</Pill>
@@ -89,9 +89,9 @@ export function ProjectsPage() {
                   </div>
                 </div>
 
-                <div className="mt-4 flex flex-wrap items-center justify-between gap-3 text-xs text-zinc-400">
+                <div className="mt-4 flex flex-wrap items-center justify-between gap-3 text-xs text-zinc-600">
                   <p>
-                    Owner: <span className="text-zinc-200">{project.owner.fullName}</span>
+                    Owner: <span className="text-zinc-800">{project.owner.fullName}</span>
                   </p>
                   <p>{project.membersCount} members</p>
                   <p>Deadline: {formatDate(project.deadline)}</p>

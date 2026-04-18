@@ -65,12 +65,12 @@ export function NotificationsPage() {
           {notificationsQuery.data.map((notification) => (
             <li
               key={notification.id}
-              className="rounded-xl border border-zinc-700 bg-zinc-950/40 p-4"
+              className="rounded-xl border border-zinc-200 bg-white p-4"
             >
               <div className="flex items-start justify-between gap-3">
                 <div>
-                  <p className="text-sm font-semibold text-white">{notification.message}</p>
-                  <p className="mt-1 text-xs text-zinc-500">{formatDateTime(notification.createdAt)}</p>
+                  <p className="text-sm font-semibold text-zinc-950">{notification.message}</p>
+                  <p className="mt-1 text-xs text-zinc-9500">{formatDateTime(notification.createdAt)}</p>
                 </div>
                 <div className="flex items-center gap-2">
                   <Pill tone={notification.isRead ? 'default' : 'warning'}>

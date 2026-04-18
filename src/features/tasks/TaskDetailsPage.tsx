@@ -242,12 +242,12 @@ export function TaskDetailsPage() {
 
   return (
     <div className="space-y-6">
-      <section className="rounded-2xl border border-zinc-500/20 bg-zinc-900/70 p-5">
+      <section className="rounded-2xl border border-zinc-200 bg-white p-5">
         <div className="flex flex-wrap items-start justify-between gap-3">
           <div>
-            <p className="text-xs uppercase tracking-[0.22em] text-zinc-300">Task details</p>
-            <h1 className="text-2xl font-bold text-white">{task?.title}</h1>
-            <p className="mt-1 text-sm text-zinc-400">Project: {project?.name ?? 'Unknown'}</p>
+            <p className="text-xs uppercase tracking-[0.22em] text-zinc-700">Task details</p>
+            <h1 className="text-2xl font-bold text-zinc-950">{task?.title}</h1>
+            <p className="mt-1 text-sm text-zinc-600">Project: {project?.name ?? 'Unknown'}</p>
           </div>
           <div className="flex items-center gap-2">
             <Pill>{task?.status}</Pill>
@@ -257,7 +257,7 @@ export function TaskDetailsPage() {
           </div>
         </div>
 
-        <div className="mt-4 text-sm text-zinc-400">
+        <div className="mt-4 text-sm text-zinc-600">
           <p>Assignee: {task?.assignee?.fullName ?? 'Unassigned'}</p>
           <p>Due date: {formatDate(task?.dueDate)}</p>
           <p>Updated: {formatDateTime(task?.updatedAt)}</p>
@@ -352,7 +352,7 @@ export function TaskDetailsPage() {
               </Button>
             </form>
           ) : (
-            <p className="mb-3 text-sm text-zinc-400">Your role cannot post comments.</p>
+            <p className="mb-3 text-sm text-zinc-600">Your role cannot post comments.</p>
           )}
 
           {addCommentMutation.isError && (
@@ -364,10 +364,10 @@ export function TaskDetailsPage() {
           ) : (
             <ul className="space-y-2">
               {(commentsQuery.data ?? []).map((comment) => (
-                <li key={comment.id} className="rounded-xl border border-zinc-700 bg-zinc-950/40 p-3">
-                  <p className="text-sm text-zinc-100">{comment.content}</p>
-                  <p className="mt-1 text-xs text-zinc-400">{comment.user.fullName}</p>
-                  <p className="mt-1 text-xs text-zinc-500">{formatDateTime(comment.createdAt)}</p>
+                <li key={comment.id} className="rounded-xl border border-zinc-200 bg-white p-3">
+                  <p className="text-sm text-zinc-900">{comment.content}</p>
+                  <p className="mt-1 text-xs text-zinc-600">{comment.user.fullName}</p>
+                  <p className="mt-1 text-xs text-zinc-9500">{formatDateTime(comment.createdAt)}</p>
                 </li>
               ))}
             </ul>
@@ -380,10 +380,10 @@ export function TaskDetailsPage() {
           ) : (
             <ul className="space-y-2">
               {(activityQuery.data ?? []).map((entry) => (
-                <li key={entry.id} className="rounded-xl border border-zinc-700 bg-zinc-950/40 p-3">
-                  <p className="text-sm text-zinc-100">{entry.action}</p>
-                  <p className="mt-1 text-xs text-zinc-400">{entry.user.fullName}</p>
-                  <p className="mt-1 text-xs text-zinc-500">{formatDateTime(entry.createdAt)}</p>
+                <li key={entry.id} className="rounded-xl border border-zinc-200 bg-white p-3">
+                  <p className="text-sm text-zinc-900">{entry.action}</p>
+                  <p className="mt-1 text-xs text-zinc-600">{entry.user.fullName}</p>
+                  <p className="mt-1 text-xs text-zinc-9500">{formatDateTime(entry.createdAt)}</p>
                 </li>
               ))}
             </ul>
@@ -418,10 +418,10 @@ export function TaskDetailsPage() {
           ) : (
             <ul className="space-y-2">
               {(attachmentsQuery.data ?? []).map((attachment) => (
-                <li key={attachment.id} className="rounded-xl border border-zinc-700 bg-zinc-950/40 p-3">
-                  <p className="text-sm font-semibold text-zinc-100">{attachment.fileName}</p>
-                  <p className="mt-1 text-xs text-zinc-400">{bytesToSize(attachment.fileSize)}</p>
-                  <p className="mt-1 text-xs text-zinc-500">{formatDateTime(attachment.createdAt)}</p>
+                <li key={attachment.id} className="rounded-xl border border-zinc-200 bg-white p-3">
+                  <p className="text-sm font-semibold text-zinc-900">{attachment.fileName}</p>
+                  <p className="mt-1 text-xs text-zinc-600">{bytesToSize(attachment.fileSize)}</p>
+                  <p className="mt-1 text-xs text-zinc-9500">{formatDateTime(attachment.createdAt)}</p>
                   <Button
                     variant="ghost"
                     className="mt-2 px-3 py-1 text-xs"

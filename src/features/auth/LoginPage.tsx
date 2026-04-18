@@ -46,14 +46,14 @@ export function LoginPage() {
   return (
     <PageShell>
       <div className="mx-auto flex min-h-[75vh] max-w-md items-center">
-        <div className="w-full rounded-2xl border border-zinc-500/20 bg-zinc-900/80 p-6 shadow-2xl backdrop-blur">
-          <p className="text-xs uppercase tracking-[0.22em] text-zinc-300">Project OS</p>
-          <h1 className="mt-2 text-2xl font-bold text-white">Sign in</h1>
-          <p className="mt-1 text-sm text-zinc-400">Access your dashboard and active projects.</p>
+        <div className="w-full rounded-2xl border border-zinc-200 bg-white p-6 shadow-2xl backdrop-blur">
+          <p className="text-xs uppercase tracking-[0.22em] text-zinc-700">Project OS</p>
+          <h1 className="mt-2 text-2xl font-bold text-zinc-950">Sign in</h1>
+          <p className="mt-1 text-sm text-zinc-600">Access your dashboard and active projects.</p>
 
           <form className="mt-6 space-y-4" onSubmit={onSubmit}>
             <div>
-              <label className="mb-1 block text-sm text-zinc-300" htmlFor="email">
+              <label className="mb-1 block text-sm text-zinc-700" htmlFor="email">
                 Email
               </label>
               <Input id="email" type="email" placeholder="jane@company.dev" {...register('email')} />
@@ -61,7 +61,7 @@ export function LoginPage() {
             </div>
 
             <div>
-              <label className="mb-1 block text-sm text-zinc-300" htmlFor="password">
+              <label className="mb-1 block text-sm text-zinc-700" htmlFor="password">
                 Password
               </label>
               <Input id="password" type="password" placeholder="********" {...register('password')} />
@@ -75,9 +75,9 @@ export function LoginPage() {
             </Button>
           </form>
 
-          <p className="mt-4 text-sm text-zinc-300">
+          <p className="mt-4 text-sm text-zinc-700">
             No account yet?{' '}
-            <Link to="/register" className="font-semibold text-zinc-200 hover:text-zinc-100">
+            <Link to="/register" className="font-semibold text-blue-600 hover:text-blue-700">
               Create one
             </Link>
           </p>

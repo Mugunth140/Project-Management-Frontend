@@ -131,12 +131,12 @@ export function ProjectDetailsPage() {
 
   return (
     <div className="space-y-6">
-      <section className="rounded-2xl border border-zinc-500/20 bg-zinc-900/70 p-5">
+      <section className="rounded-2xl border border-zinc-200 bg-white p-5">
         <div className="flex flex-wrap items-start justify-between gap-3">
           <div>
-            <p className="text-xs uppercase tracking-[0.2em] text-zinc-300">Project</p>
-            <h1 className="mt-1 text-2xl font-bold text-white">{project.name}</h1>
-            <p className="mt-2 max-w-3xl text-sm text-zinc-300">{project.description || 'No description yet.'}</p>
+            <p className="text-xs uppercase tracking-[0.2em] text-zinc-700">Project</p>
+            <h1 className="mt-1 text-2xl font-bold text-zinc-950">{project.name}</h1>
+            <p className="mt-2 max-w-3xl text-sm text-zinc-700">{project.description || 'No description yet.'}</p>
           </div>
           <div className="flex gap-2">
             <Pill>{project.status}</Pill>
@@ -146,9 +146,9 @@ export function ProjectDetailsPage() {
           </div>
         </div>
 
-        <div className="mt-4 flex flex-wrap items-center gap-4 text-sm text-zinc-400">
+        <div className="mt-4 flex flex-wrap items-center gap-4 text-sm text-zinc-600">
           <p>
-            Owner: <span className="text-zinc-100">{project.owner.fullName}</span>
+            Owner: <span className="text-zinc-900">{project.owner.fullName}</span>
           </p>
           <p>Members: {members.length}</p>
           <p>Updated: {formatDateTime(project.updatedAt)}</p>
@@ -199,11 +199,11 @@ export function ProjectDetailsPage() {
               {members.map((member) => (
                 <li
                   key={member.id}
-                  className="flex items-center justify-between rounded-xl border border-zinc-700 bg-zinc-950/40 p-3"
+                  className="flex items-center justify-between rounded-xl border border-zinc-200 bg-white p-3"
                 >
                   <div>
-                    <p className="text-sm font-semibold text-zinc-100">{member.user.fullName}</p>
-                    <p className="text-xs text-zinc-400">{member.user.email}</p>
+                    <p className="text-sm font-semibold text-zinc-900">{member.user.fullName}</p>
+                    <p className="text-xs text-zinc-600">{member.user.email}</p>
                   </div>
                   <div className="flex items-center gap-2">
                     <Pill>{member.role}</Pill>
@@ -226,7 +226,7 @@ export function ProjectDetailsPage() {
         <SectionCard
           title="Tasks"
           action={
-            <Link to={`/projects/${project.id}/tasks`} className="text-sm font-semibold text-zinc-200 hover:text-zinc-100">
+            <Link to={`/projects/${project.id}/tasks`} className="text-sm font-semibold text-blue-600 hover:text-blue-700">
               View all
             </Link>
           }
@@ -236,14 +236,14 @@ export function ProjectDetailsPage() {
           ) : (
             <ul className="space-y-2">
               {tasks.slice(0, 6).map((task) => (
-                <li key={task.id} className="rounded-xl border border-zinc-700 bg-zinc-950/40 p-3">
+                <li key={task.id} className="rounded-xl border border-zinc-200 bg-white p-3">
                   <div className="flex items-start justify-between gap-2">
-                    <Link to={`/tasks/${task.id}`} className="text-sm font-semibold text-zinc-100 hover:text-zinc-50">
+                    <Link to={`/tasks/${task.id}`} className="text-sm font-semibold text-blue-600 hover:text-blue-700">
                       {task.title}
                     </Link>
                     <Pill>{task.status}</Pill>
                   </div>
-                  <p className="mt-1 text-xs text-zinc-400">Assignee: {task.assignee?.fullName ?? 'Unassigned'}</p>
+                  <p className="mt-1 text-xs text-zinc-600">Assignee: {task.assignee?.fullName ?? 'Unassigned'}</p>
                 </li>
               ))}
             </ul>
@@ -257,10 +257,10 @@ export function ProjectDetailsPage() {
         ) : (
           <ul className="space-y-2">
             {activity.map((entry) => (
-              <li key={entry.id} className="rounded-xl border border-zinc-700 bg-zinc-950/40 p-3">
-                <p className="text-sm text-zinc-100">{entry.action}</p>
-                <p className="mt-1 text-xs text-zinc-400">{entry.user.fullName}</p>
-                <p className="mt-1 text-xs text-zinc-500">{formatDateTime(entry.createdAt)}</p>
+              <li key={entry.id} className="rounded-xl border border-zinc-200 bg-white p-3">
+                <p className="text-sm text-zinc-900">{entry.action}</p>
+                <p className="mt-1 text-xs text-zinc-600">{entry.user.fullName}</p>
+                <p className="mt-1 text-xs text-zinc-9500">{formatDateTime(entry.createdAt)}</p>
               </li>
             ))}
           </ul>
