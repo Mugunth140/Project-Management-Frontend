@@ -247,12 +247,12 @@ export function ProjectTasksPage() {
 
   return (
     <div className="space-y-6">
-      <section className="rounded-2xl border border-cyan-500/20 bg-slate-900/70 p-5">
+      <section className="rounded-2xl border border-zinc-500/20 bg-zinc-900/70 p-5">
         <div className="flex flex-wrap items-center justify-between gap-3">
           <div>
-            <p className="text-xs uppercase tracking-[0.2em] text-cyan-300">Task board</p>
+            <p className="text-xs uppercase tracking-[0.2em] text-zinc-300">Task board</p>
             <h1 className="text-2xl font-bold text-white">{project?.name}</h1>
-            {memberRole && <p className="text-sm text-slate-400">Your project role: {memberRole}</p>}
+            {memberRole && <p className="text-sm text-zinc-400">Your project role: {memberRole}</p>}
           </div>
           <div className="flex items-center gap-2">
             <Button variant={view === 'LIST' ? 'primary' : 'ghost'} onClick={() => setView('LIST')}>
@@ -360,14 +360,14 @@ export function ProjectTasksPage() {
                 const canManageThisTask = canManageTask(user, task, project, members)
 
                 return (
-                  <li key={task.id} className="rounded-xl border border-slate-700 bg-slate-950/40 p-3">
+                  <li key={task.id} className="rounded-xl border border-zinc-700 bg-zinc-950/40 p-3">
                     <div className="flex flex-wrap items-start justify-between gap-3">
                       <div>
-                        <Link to={`/tasks/${task.id}`} className="text-sm font-semibold text-cyan-200 hover:text-cyan-100">
+                        <Link to={`/tasks/${task.id}`} className="text-sm font-semibold text-zinc-200 hover:text-zinc-100">
                           {task.title}
                         </Link>
-                        <p className="mt-1 text-xs text-slate-400">{task.description || 'No description'}</p>
-                        <p className="mt-1 text-xs text-slate-500">
+                        <p className="mt-1 text-xs text-zinc-400">{task.description || 'No description'}</p>
+                        <p className="mt-1 text-xs text-zinc-500">
                           Assignee: {task.assignee?.fullName ?? 'Unassigned'} | Due: {formatDate(task.dueDate)}
                         </p>
                       </div>
@@ -418,20 +418,20 @@ export function ProjectTasksPage() {
             const tasksForStatus = kanbanTasks.filter((task) => task.status === status)
 
             return (
-              <article key={status} className="rounded-2xl border border-slate-700 bg-slate-900/70 p-4">
-                <h2 className="mb-3 text-sm font-semibold text-cyan-100">{status}</h2>
+              <article key={status} className="rounded-2xl border border-zinc-700 bg-zinc-900/70 p-4">
+                <h2 className="mb-3 text-sm font-semibold text-zinc-100">{status}</h2>
                 {tasksForStatus.length === 0 ? (
-                  <p className="rounded-lg border border-dashed border-slate-700 p-3 text-xs text-slate-500">
+                  <p className="rounded-lg border border-dashed border-zinc-700 p-3 text-xs text-zinc-500">
                     No tasks in this column.
                   </p>
                 ) : (
                   <ul className="space-y-2">
                     {tasksForStatus.map((task) => (
-                      <li key={task.id} className="rounded-lg border border-slate-700 bg-slate-950/50 p-3">
-                        <Link to={`/tasks/${task.id}`} className="text-sm font-semibold text-cyan-200 hover:text-cyan-100">
+                      <li key={task.id} className="rounded-lg border border-zinc-700 bg-zinc-950/50 p-3">
+                        <Link to={`/tasks/${task.id}`} className="text-sm font-semibold text-zinc-200 hover:text-zinc-100">
                           {task.title}
                         </Link>
-                        <p className="mt-1 text-xs text-slate-400">{task.assignee?.fullName ?? 'Unassigned'}</p>
+                        <p className="mt-1 text-xs text-zinc-400">{task.assignee?.fullName ?? 'Unassigned'}</p>
                       </li>
                     ))}
                   </ul>

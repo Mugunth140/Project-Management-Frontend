@@ -4,7 +4,7 @@ import { Button, SectionCard } from '../shared/ui/base'
 export function NotFoundPage() {
   return (
     <SectionCard title="Page not found">
-      <p className="text-sm text-slate-300">The page you requested does not exist.</p>
+      <p className="text-sm text-zinc-300">The page you requested does not exist.</p>
       <div className="mt-4">
         <Link to="/">
           <Button>Go to dashboard</Button>

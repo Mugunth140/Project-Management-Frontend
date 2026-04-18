@@ -173,7 +173,7 @@ export function ProjectFormPage() {
       <SectionCard title="Project form">
         <ErrorState message="You do not have permission to perform this action." />
         <div className="mt-4">
-          <Link to="/projects" className="text-sm font-semibold text-cyan-200 hover:text-cyan-100">
+          <Link to="/projects" className="text-sm font-semibold text-zinc-200 hover:text-zinc-100">
             Back to projects
           </Link>
         </div>
@@ -185,7 +185,7 @@ export function ProjectFormPage() {
     <SectionCard title={isEditMode ? 'Edit project' : 'Create project'}>
       <form className="grid gap-4 md:grid-cols-2" onSubmit={onSubmit}>
         <div className="md:col-span-2">
-          <label className="mb-1 block text-sm text-slate-300" htmlFor="name">
+          <label className="mb-1 block text-sm text-zinc-300" htmlFor="name">
             Name
           </label>
           <Input id="name" placeholder="Phoenix Redesign" {...register('name')} />
@@ -193,7 +193,7 @@ export function ProjectFormPage() {
         </div>
 
         <div className="md:col-span-2">
-          <label className="mb-1 block text-sm text-slate-300" htmlFor="description">
+          <label className="mb-1 block text-sm text-zinc-300" htmlFor="description">
             Description
           </label>
           <Textarea id="description" rows={4} placeholder="Project goals, scope, milestones..." {...register('description')} />
@@ -201,7 +201,7 @@ export function ProjectFormPage() {
         </div>
 
         <div>
-          <label className="mb-1 block text-sm text-slate-300" htmlFor="status">
+          <label className="mb-1 block text-sm text-zinc-300" htmlFor="status">
             Status
           </label>
           <Select id="status" {...register('status')}>
@@ -214,7 +214,7 @@ export function ProjectFormPage() {
         </div>
 
         <div>
-          <label className="mb-1 block text-sm text-slate-300" htmlFor="priority">
+          <label className="mb-1 block text-sm text-zinc-300" htmlFor="priority">
             Priority
           </label>
           <Select id="priority" {...register('priority')}>
@@ -227,7 +227,7 @@ export function ProjectFormPage() {
         </div>
 
         <div>
-          <label className="mb-1 block text-sm text-slate-300" htmlFor="deadline">
+          <label className="mb-1 block text-sm text-zinc-300" htmlFor="deadline">
             Deadline
           </label>
           <Input id="deadline" type="date" {...register('deadline')} />
@@ -256,7 +256,7 @@ export function ProjectFormPage() {
                 ? 'Creating...'
                 : 'Create project'}
           </Button>
-          <Link to="/projects" className="text-sm font-semibold text-slate-300 hover:text-slate-100">
+          <Link to="/projects" className="text-sm font-semibold text-zinc-300 hover:text-zinc-100">
             Cancel
           </Link>
         </div>
