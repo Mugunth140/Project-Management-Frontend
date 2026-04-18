@@ -56,7 +56,7 @@ export function LoginPage() {
               <label className="mb-1 block text-sm text-zinc-700" htmlFor="email">
                 Email
               </label>
-              <Input id="email" type="email" placeholder="jane@company.dev" {...register('email')} />
+              <Input id="email" type="email" placeholder="mugunth@company.dev" {...register('email')} />
               <FieldError message={errors.email?.message} />
             </div>
 

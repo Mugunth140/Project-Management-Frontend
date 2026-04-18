@@ -13,54 +13,55 @@ export function AppLayout() {
 
   return (
     <PageShell>
-      <div className="grid gap-6 lg:grid-cols-[260px,1fr]">
-        <aside className="h-fit rounded-2xl border border-zinc-200 bg-white p-4 shadow-xl backdrop-blur">
-          <Link to="/" className="mb-6 block rounded-xl border border-zinc-200 bg-zinc-50 px-3 py-2">
-            <p className="text-xs uppercase tracking-[0.2em] text-blue-600">Project OS</p>
-            <p className="text-lg font-semibold text-zinc-950">Management Hub</p>
-          </Link>
+      <header className="mb-6 rounded-2xl border border-zinc-200 bg-white px-4 py-3">
+        <div className="flex flex-wrap items-center justify-between gap-4">
+          <div className="flex items-center gap-6">
+            <Link to="/" className="flex flex-col items-center gap-0">
+                <img src="favicon.svg" alt="logo" className="h-8 w-8" />
+            </Link>
 
-          <nav className="space-y-1">
-            {navigation.map((item) => (
-              <NavLink
-                key={item.to}
-                to={item.to}
-                end={item.to === '/'}
-                className={({ isActive }) =>
-                  [
-                    'block rounded-lg px-3 py-2 text-sm font-semibold transition',
-                    isActive
-                      ? 'bg-blue-600 text-white'
-                      : 'text-zinc-700 hover:bg-zinc-100 hover:text-zinc-900',
-                  ].join(' ')
-                }
-              >
-                {item.label}
-              </NavLink>
-            ))}
-          </nav>
+            <nav className="flex flex-wrap items-center gap-1">
+              {navigation.map((item) => (
+                <NavLink
+                  key={item.to}
+                  to={item.to}
+                  end={item.to === '/'}
+                  className={({ isActive }) =>
+                    [
+                      'rounded-md px-3 py-1.5 text-sm font-medium transition',
+                      isActive
+                        ? 'bg-blue-600 text-white'
+                        : 'text-zinc-700 hover:bg-zinc-100 hover:text-zinc-950',
+                    ].join(' ')
+                  }
+                >
+                  {item.label}
+                </NavLink>
+              ))}
+            </nav>
+          </div>
 
           {user && (
-            <div className="mt-8 rounded-xl border border-zinc-200 bg-zinc-50 p-3">
-              <p className="text-sm font-semibold text-zinc-950">{user.fullName}</p>
-              <p className="text-xs text-zinc-600">{user.email}</p>
-              <div className="mt-2">
-                <Pill>{user.role}</Pill>
+            <div className="flex items-center gap-3">
+              <div className="hidden text-right sm:block">
+                <p className="text-sm font-semibold text-zinc-950">{user.fullName}</p>
+                <p className="text-xs text-zinc-600">{user.email}</p>
               </div>
+              <Pill>{user.role}</Pill>
               <button
                 onClick={logout}
-                className="mt-4 w-full rounded-lg border border-zinc-300 px-3 py-2 text-sm font-semibold text-zinc-700 transition hover:bg-zinc-100"
+                className="rounded-md border border-zinc-300 px-3 py-1.5 text-sm font-medium text-zinc-700 transition hover:bg-zinc-100"
               >
                 Logout
               </button>
             </div>
           )}
-        </aside>
+        </div>
+      </header>
 
-        <main className="space-y-6">
-          <Outlet />
-        </main>
-      </div>
+      <main className="space-y-6">
+        <Outlet />
+      </main>
     </PageShell>
   )
 }
